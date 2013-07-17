@@ -1,0 +1,24 @@
+@import 'normalize';
+@import 'colors';
+@import 'layout';
+@columns: 6;
+@gutter: 2%;
+
+body {
+  font-family: "Playfair Display", serif;
+  text-rendering:optimizeLegibility;
+}
+
+textarea {
+   font-family: monospace;
+}
+
+input[type=checkbox] {
+  cursor: pointer;
+
+  &:hover {
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=30)";
+    filter: alpha(opacity=30);
+    opacity: 0.5;
+  }
+}

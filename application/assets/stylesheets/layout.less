@@ -1,0 +1,273 @@
+@basesize: 1em; //base font size
+@columns: 16;   //number of columns - for grid
+@gutter: 1.5%;
+
+.clearfix() {
+  *zoom: 1;
+
+  &:before,
+  &:after {
+    content: " ";
+    display: table;
+  }
+  &:after {
+    clear: both;
+  }
+}
+
+body{
+  margin: @basesize 2 * @basesize;
+  font-size: @basesize;
+  line-height: 1.5 * @basesize;
+  margin-bottom: 1.5 * @basesize;
+}
+
+h1 {
+  font-size: 2 * @basesize;
+  line-height: 0.75 * @basesize;
+}
+
+h2 {
+  font-size: 1.5 * @basesize;
+  line-height: @basesize;
+}
+
+p {
+  text-align: justify;
+}
+
+blockquote {
+  padding-left: 0.5 * @basesize;
+  border-left: 1px dashed @background4;
+}
+
+small {
+  font-size: 0.8 * @basesize;
+}
+
+table {
+  border:0px;
+  border-collapse:collapse;
+  td {
+    padding:@basesize / 2;
+  }
+  tr {
+    margin-bottom: @basesize / 2;
+  }
+}
+
+form {
+  label {
+    .col(1);
+  }
+  input[type='text'],
+  input[type='password'],
+  textarea {
+    .col(@columns - 1);
+    border: 0px;
+    height: auto;
+  }
+}
+
+.vertical {
+  li {
+    list-style-type: none;
+    padding-right: @basesize;
+    margin-bottom: @basesize * 0.5;
+  }
+}
+
+.horizontal {
+  .vertical();
+  li {
+    display: inline;
+  }
+}
+
+.centered(@width: auto, @margin: auto) {
+  width: @width;
+  margin: 0 @margin;
+}
+
+img {
+  @margin: 0.5 * @basesize;
+  margin-bottom: @margin;
+  margin-top: @margin;
+  &.left {
+    float: left;
+    margin-left: 0;
+    margin-right: @margin;
+  }
+  &.right {
+    float: right;
+    margin-left: @margin;
+    margin-right: 0;
+  }
+  &.center {
+    display: block;
+    .centered();
+  }
+}
+
+.hidden {
+  display: none;
+}
+
+.grid () {
+  .clearfix();
+  margin-left: -@gutter;
+}
+.col(@width: 1) {
+  float: left;
+  padding-left: @gutter;
+  width: percentage(@width / @columns) - @gutter;
+}
+
+.comment {
+  .author {
+    .col(2);
+  }
+  .content {
+    .col(4);
+  }
+}
+
+.f_right {
+  float: right;
+}
+
+.f_left {
+  float: left;
+}
+
+.navigation{
+  .col(1);
+  ul {
+    .vertical();
+    .text_center;
+  }
+}
+
+.container{
+  .grid();
+}
+
+.header {
+  .col(@columns);
+}
+
+.side {
+  .col(2);
+}
+
+.footer {
+  margin-top: @basesize;
+  .text_center;
+  font-size: @basesize / 1.5;
+}
+
+.sidequote() {
+  .col(2);
+  font-size: @basesize * 1.5;
+  margin-top: @basesize / 2;
+  margin-bottom: @basesize / 2;
+}
+
+.sidequote_left {
+  .sidequote;
+  padding-left: 0;
+  padding-right: @gutter;
+}
+
+.sidequote_right {
+  .sidequote;
+  float: right;
+}
+
+.tag_content,
+.tag_posts {
+  .col(3);
+}
+
+.main_content {
+  .col(@columns - 1);
+  text-align: justify;
+}
+
+.comment_section {
+  clear: both;
+}
+
+.text_center {
+  text-align: center;
+}
+
+.paging { // pagination
+  clear: both;
+  .text_center;
+  a {
+    margin-left: @basesize;
+  }
+  a.active {
+    font-size: @basesize * 1.25;
+  }
+}
+
+.table_index { // table in every index view
+  clear: both;
+  .table_row {
+    clear: both;
+    display: table-row;
+    & > div {
+      display: table-cell;
+      padding: @basesize / 4;
+    }
+  }
+}
+
+/* WP legacy */
+.alignleft {
+	float: left;
+  margin-right: 2 * @basesize;
+}
+
+.alignright {
+	float: right;
+  margin-left: 2 * @basesize;
+}
+
+.long-song-lyrics{
+  width: 50%;
+  text-align: center;
+  float: left;
+  margin-top: 1em;
+  margin-bottom: 0.5em;
+}
+
+.epigraph {
+ margin-left: auto;
+ text-align: left;
+ width: 40%;
+}
+.epigraph .author{
+ text-align: right;
+ font-style:italic;
+}
+
+// classes for use in plain CSS
+.column   { .col();   }
+.column2  { .col(2);  }
+.column3  { .col(3);  }
+.column4  { .col(4);  }
+.column5  { .col(5);  }
+.column6  { .col(6);  }
+.column7  { .col(7);  }
+.column8  { .col(8);  }
+.column9  { .col(9);  }
+.column10 { .col(10); }
+.column11 { .col(11); }
+.column12 { .col(12); }
+.column13 { .col(13); }
+.column14 { .col(14); }
+.column15 { .col(15); }
+.column16 { .col(16); }
