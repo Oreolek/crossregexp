@@ -17,12 +17,18 @@ class Controller_Riddle extends Controller_Layout {
   public function action_solve()
   {
     $this->template = new View_Riddle;
-    $level = $this->request->param('level');
-    $riddles = $navigation = Kohana::$config->load('riddles')->get($level);
-    if (empty($level))
+    $riddle = $this->request->param('riddle');
+    if (empty($riddle))
+    {
+      $riddle = Kohana::$config->load('riddles')->get('tutorial1');
+    }
+    else {
+      $riddle = Kohana::$config->load('riddles')->get($riddle);
+    }
+    if (empty($riddle))
     {
       return $this->request->redirect('error/404');
     }
-
+    $this->template->riddle = $riddle;
   }
 }

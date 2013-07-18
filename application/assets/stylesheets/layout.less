@@ -197,64 +197,58 @@ img {
   }
 }
 
-@hex_radius: 52px; // btw, radius = hexagon side
-@hex_inradius: (@hex_radius * sqrt(3) / 2) * 1px;
-@hex_margin: 3px;
+@cell_side: @basesize*4;
+@cell_border: 2px solid @foreground4;
 
 .riddle {
   .row {
     clear: left;
-    &.even {
-      margin-left: @hex_radius;
-    }
   }
   .cell {
     float: left;
-    margin-left: @hex_margin;
-    margin-bottom: (-0.5 * @hex_radius + @hex_margin);
+    border: @cell_border;
     .b_border {
-      display: block;
-      width: 0px;
-      height: 0px;
-      overflow: hidden;
+      display: none;
     }
     input[type=text] { //every input is a crossword cell
-      display: block;
-      width: (@hex_radius * 2 - 2px);
-      height: @hex_radius;
-      line-height: (@hex_radius - 2px);
-      padding: 1px;
+      width: @cell_side;
+      height: @cell_side;
+      line-height: (@cell_side - 2px);
+      padding: @basesize;
       text-align: center;
       background: @background2;
-      border: 0;
-    }
-    .b_top {
-      border-bottom: (@hex_radius / 2) solid @background2;
-      border-left: @hex_radius dotted transparent;
-      border-right: @hex_radius dotted transparent;
-    }
-    .b_bottom {
-      border-top: (@hex_radius / 2) solid @background2;
-      border-left: @hex_radius dotted transparent;
-      border-right: @hex_radius dotted transparent;
     }
   }
   label{
+    float: left;
     font-family: monospace;
     &.horizontal {
-      line-height: @hex_radius;
-      padding-top: (@hex_radius / 2);
+      padding-top: (@cell_side / 2);
       margin-left: @basesize;
       margin-right: @basesize;
-      width: @hex_radius;
-      display: none;
+      width: @cell_side * 3;
     }
     &.vertical {
-      .rotation(-25deg);
+      .rotation(-30deg);
+      width: (@cell_side * 2);
+      &.l_top {
+        margin-bottom: (@basesize * 2);
+        &:first-child {
+          margin-left: (@cell_side * 4);
+        }
+      }
+      &.l_bottom {
+        margin-top: (@basesize * 2);
+        &:first-child {
+          margin-left: (@cell_side * 3);
+        }
+      }
     }
   }
   input[type=submit] {
     clear: both;
+    display: block;
+    .centered();
   }
 }
 

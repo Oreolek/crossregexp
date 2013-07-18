@@ -120,7 +120,7 @@ Route::set('error', 'error/<action>(/<message>)', array('action' => '[0-9]++','m
   'controller' => 'Error',
 ));
 
-Route::set('default', '(<controller>(/<action>(/<level>)))')
+Route::set('default', '(<controller>(/<action>(/<riddle>)))')
  ->defaults(array(
   'controller' => 'Riddle',
   'action'     => 'index',
