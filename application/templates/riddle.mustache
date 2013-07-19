@@ -2,9 +2,15 @@
 
 Сложность: {{get_difficulty}}
 
+{{{get_description}}}
+
+<noscript>Вы должны включить Javascript для того, чтобы проверить решение задачи.</noscript>
+<div class="congratulations">Поздравляем! Загадка решена верно.</div>
+
 <form method="POST" class="riddle">
   {{{labels_vertical_top}}}
   {{{get_riddle}}}
   {{{labels_vertical_bottom}}}
-  <input type="submit">
+  <input type="submit" value="Проверить решение">
+  {{!<a class="next_puzzle" href="{{next_puzzle \}\}">Следующая загадка</a>}}
 </form>

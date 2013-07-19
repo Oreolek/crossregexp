@@ -6,7 +6,9 @@ return array(
   'navigation' => array(
     'Как в это играть?' => 'riddle/index',
     'Напомнить выражения' => 'riddle/memo',
-    'Обучение' => 'riddle/solve/tutorial1',
+    'Обучение: |' => 'riddle/solve/tutorial1',
+    'Обучение: []' => 'riddle/solve/tutorial2',
+    'Учебный бой' => 'riddle/solve/battle1'
   ),
   'difficulties' => array(
     'trivial' => 'Простейшее',

@@ -85,4 +85,9 @@ class View_Riddle extends View_Layout {
     $difficulty_index = Arr::get($this->riddle, 'difficulty');
     return Arr::get($difficulties, $difficulty_index);
   }
+
+  public function get_description()
+  {
+    return Markdown::instance()->transform(Arr::get($this->riddle, 'description'));
+  }
 }

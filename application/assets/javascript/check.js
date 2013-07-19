@@ -1,6 +1,7 @@
 jQuery(document).ready(function(){
   jQuery('form').on('submit', function(event){
     document.valid = true;
+    $('label').css('background-color', '');
     $('label').each(function(){
       if (document.valid === false)
       {
@@ -38,13 +39,13 @@ jQuery(document).ready(function(){
         }
       }
     });
-    console.log(document.valid);
+    event.preventDefault();
     if (document.valid === true)
     {
+      $('.congratulations').show('slow');
     }
-    else
-    {
+    else {
+      $('.congratulations').hide();
     }
-    event.preventDefault();
   });
 });
