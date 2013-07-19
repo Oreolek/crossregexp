@@ -5,12 +5,12 @@ return array(
     'difficulty' => 'trivial',
     'title' => 'ИЛИ',
     'expressionsX' => array(
-      array('А|Б', '.*'),
+      array('(А|Б)+', '.*'),
       'А*'
     ),
     'expressionsY' => array(
-      'А|Г',
-      'А?'
+      '(А|Г)+',
+      'А+'
     )
   ),
   'anykeytowin' => array(

@@ -6,11 +6,14 @@ return array(
   'navigation' => array(
     'Как в это играть?' => 'riddle/index',
     'Напомнить выражения' => 'riddle/memo',
-    'Обучение' => 'riddle/solve/excel',
-    'Простые загадки' => 'riddle/solve/anykeytowin',
-    'Продвинутые загадки' => 'riddle/solve/wargames',
-    'Головоломки' => 'riddle/solve/headbangers',
-    'Палиндромеда' => 'riddle/solve/programmer',
-    'Подстава' => 'riddle/solve/perlgurus',
+    'Обучение' => 'riddle/solve/tutorial1',
+  ),
+  'difficulties' => array(
+    'trivial' => 'Простейшее',
+    'anykeytowin' => 'Пара извилин',
+    'wargame' => 'Настольная игра',
+    'headbanger' => 'Головоломка',
+    'programmer' => 'Высокое напряжение',
+    'perlguru' => 'Собеседование на программиста Perl'
   )
 );

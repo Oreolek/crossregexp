@@ -27,7 +27,7 @@ class Controller_Riddle extends Controller_Layout {
     }
     if (empty($riddle))
     {
-      return $this->request->redirect('error/404');
+      return $this->redirect('error/404');
     }
     $this->template->riddle = $riddle;
   }
