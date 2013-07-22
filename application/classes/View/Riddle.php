@@ -50,7 +50,7 @@ class View_Riddle extends View_Layout {
       foreach ($this->riddle['expressionsY'] as $columns)
       {
         $j++;
-        $output .= '<div class="cell row_'.$i.' col_'.$j.'"><div class="b_border b_top"></div><input type="text"><div class="b_border b_bottom"></div></div>';
+        $output .= '<div class="cell row_'.$i.' col_'.$j.'"><div class="b_border b_top"></div><input type="text" maxlength="1"><div class="b_border b_bottom"></div></div>';
       }
       $output .= '<label class="horizontal" data-row="row_'.$i.'">'.$label_right.'</label>';
       $output .= '</div>'."\n";
